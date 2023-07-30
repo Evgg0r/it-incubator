@@ -10,26 +10,20 @@
 <body>
     <script>
         let balance = 110;
-        const product1Prise = 110;
 
-        document.write('START', '<br>')
+        document.write('START', '<br>');
 
-        
-        //     if (product1Prise <= balance) {
-        //     document.write('Product purchased');
-        // } else {
-        //     document.write('Not enough money');
-        // }
 
-        (product1Prise > balance) {
+        const product1PriseString = window.prompt('How much product cost?');
+        const product1Prise = window.Number(product1PriseString);
+
+        if (balance > product1Prise ) {
             document.write('Not enough money');
         } else {
             document.write('Product purchased');
-        } else {');
         }
 
         document.write('<br>', 'END')
     </script>
 </body>
-
 </html>
