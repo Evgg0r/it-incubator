@@ -17,13 +17,18 @@
         const product1PriseString = window.prompt('How much product cost?');
         const product1Prise = window.Number(product1PriseString);
 
-        if (balance > product1Prise ) {
-            document.write('Not enough money');
+        if (window.isNaN(product1Prise))  {
+            document.write('You input incorrect number');
         } else {
-            document.write('Product purchased');
+            if (balance > product1Prise) {
+                document.write('Not enough money');
+            } else {
+                document.write('Product purchased');
+            }
         }
 
         document.write('<br>', 'END')
     </script>
 </body>
+
 </html>
