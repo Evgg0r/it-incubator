@@ -33,29 +33,31 @@
     <p>Ароматный напиток из черного чая, специй, молока и меда.</p>
     <p>
 
-        <a href="mission.html" title="Узнайте больше о важной задаче кофе Starbuzz">Ознакомьтесь с нашей задачей</a>
+        Читайте <a href="http://wickedlysmart.com/buzz" title="Все самое интересное о кофеине">Все о кофеине
 
-        <script>
-            let balance = 110;
+            <a href="mission.html" title="Узнайте больше о важной задаче кофе Starbuzz">Ознакомьтесь с нашей задачей</a>
 
-            document.write('START', '<br>');
+            <script>
+                let balance = 110;
+
+                document.write('START', '<br>');
 
 
-            const product1PriseString = window.prompt('How much product cost?');
-            const product1Prise = window.Number(product1PriseString);
+                const product1PriseString = window.prompt('How much product cost?');
+                const product1Prise = window.Number(product1PriseString);
 
-            if (window.isNaN(product1Prise)) {
-                document.write('You input incorrect number');
-            } else {
-                if (balance > product1Prise) {
-                    document.write('Not enough money');
+                if (window.isNaN(product1Prise)) {
+                    document.write('You input incorrect number');
                 } else {
-                    document.write('Product purchased');
+                    if (balance > product1Prise) {
+                        document.write('Not enough money');
+                    } else {
+                        document.write('Product purchased');
+                    }
                 }
-            }
 
-            document.write('<br>', 'END')
-        </script>
+                document.write('<br>', 'END')
+            </script>
 </body>
 
 </html>
