@@ -1,57 +1,70 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
 </head>
+
 <body>
-<script>
-    const word0 = "Wassup";
-    const word0translation = "Здорова";
+    <!-- <script src="index.js"></script> -->
+    <script>
+        const words = [{
+                original: "Wassup",
+                translation: "Здорова"
+            },
+            {
+                original: "Bue",
+                translation: "Покеда"
+            },
+            {
+                original: "Programmer",
+                translation: "Програмист"
+            }
 
-    const word1 = "Bue";
-    const word1translation = "Покеда";
+        ]
 
-    const word2 = "Programmer";
-    const word2translation = "Програмист";
+        const notificationMessages = {
+            start: {
+                hello: "Hello man. You can learn English. Good Luck"
+            },
+            result: {
+                finishSuccess: "Молодец. Good result!",
+                finishUnsuccess: "Молодец. Но посторайся лучше"
+            }
+        }
 
-    const wordsCount = 3;
 
-    const finishSuccessMassage = "Молодец. Good result";
-    const finishUnsuccessMassage = "Молодец. Но посторайся лучше";
+        const setting = {
+            correctAnswersMinPercent: 50
+        }
 
-    const correctAnswersMinPercent = 50
+        const result = {
+            correctAnswersCount: 0
+        }
 
-    let correctAnswersCount = 0;
-    
-    // ----------
+        // -----------
 
-    const userAnswer0 = prompt(word0); // 0
-    alert(userAnswer0 === word0translation);
-    if (userAnswer0 === word0translation) {
-        correctAnswersCount === word0translation + 1;
-    }
+        alert(notificationMessages.start.hello)
 
-    const userAnswer1 = prompt(word1); // 1
-    alert(userAnswer1 === word0translation);
-    if (userAnswer1 === word1translation) {
-        correctAnswersCount === word0translation + 1;
-    }
+        for (let i = 0; i < words.length; i++) {
 
-    const userAnswer2 = prompt(word2); // 2
-    alert(userAnswer2 === word2translation);
-    if (userAnswer2 === word0translation) {
-        correctAnswersCount  === word0translation + 1
-    }
+            let userAnswer = prompt(words[i].original); // 0
+            alert(userAnswer === words[i].translation);
+            if (userAnswer === words[i].translation) {
+                result.correctAnswersCount = result.correctAnswersCount + 1;
+            }
+        }
 
-    const userCorrectAnswersPercent = correctAnswersCount / wordsCount * 100 > correctAnswersMinPercent
+        const userCorrectAnswersPercent = result.correctAnswersCount / words.length * 100;
 
-    if (userCorrectAnswersPercent) {
-        alert(finishSuccessMassage); 
-    } else {
-        alert(finishUnsuccessMassage);
-    }
-</script>
+        if (userCorrectAnswersPercent > setting.correctAnswersMinPercent) {
+            alert(notificationMessages.result.finishSuccess);
+        } else {
+            alert(notificationMessages.result.finishUnsuccess);
+        }
+    </script>
 </body>
+
 </html>
