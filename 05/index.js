@@ -1,33 +1,62 @@
-let location1 = Math.floor(Math.random() * 5)
-let location2 = location1 + 1;
-let location3 = location2 + 2;
-let guess;
-let hits = 0;
-let guesses = 0;
-let isSunk = false;
+// dogName = "lady";
+// dogWeight = 17;
 
-while (isSunk == false) {
-    guess = prompt("Ready, aim, fire! (enter a number 0-6):");
+// function bark(name, weight) {
+//     if (weight > 20) {
+//         console.log(name + " says WOOF WOOF");
+//     } else {
+//         console.log(name + " says woof woof");
+//     }
+// }
 
-    if (guess < 0 || guess > 6) {
-        alert("Please enter a valid cell number!");
-    } else {
-        guesses = guesses + 1;
+// bark("rover", 20);
+// bark("spot", 13);
+// bark("spike", 53);
+// bark("lady", 17);
 
-        if (guess == location1 || guess == location2 || guess == location3) {
-            alert("HIT!");
-            hits = hits + 1;
 
-            if (hits == 3) {
-                isSunk = true;
-                alert("You sank my battleship!");
-            }
-        } else {
-            alert("MISS");
-        }
+// function whatShallWear(temp) {
+//     if (temp < 60) {
+//         console.log("Wear a jacket");
+//     } else if (temp < 70) {
+//         console.log("Wear a sweater");
+//     } else {
+//         console.log("Wear t-shirt");
+//     }
+// }
+
+// whatShallWear(50);
+// whatShallWear(80);
+// whatShallWear(60);
+
+function clunk(times) {
+    var num = times;
+    while (num > 0) {
+        display("clunk");
+        num = num - 1;
     }
 }
 
-let stats = "You took " + guesses + " guesses to sink the battleship, " + "which means your shooting accuracy was " + (3 / guesses);
+function thingamajig(size) {
+    var facky = 1;
+    clunkCounter = 0;
+    if (size == 0) {
+        display("clank");
+    } else if (size == 1) {
+        display("thunk");
+    } else {
+        while (size > 1) {
+            facky = facky * size;
+        }
+        size = size - 1;
+        clunk(facky);
+    }
+}
 
-alert(stats);
+function display(output) {
+    console.log(output);
+clunkCounter = clunkCounter + 1;
+}
+var clunkCounter = 0;
+thingamajig(1);
+console.log(clunkCounter);
