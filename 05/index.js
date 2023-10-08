@@ -127,7 +127,7 @@ console.log("Highest bubble score: " + highScore);
 let bestSolutions = getBestResults(scores, highScore);
 console.log("Solutions with the highest score: " + bestSolutions);
 
-function getMostCostEffectiveSolution(score, costs, hihgScore) {
+function getMostCostEffectiveSolution(score, costs, highScore) {
     let cost = 100;
     let index;
     for (i =0; i < scores.length; i++) {
