@@ -13,12 +13,26 @@
 // const massege = getGreetingMassege('Shenia', 'IT-INCUBATOR.IO');
 // console.log(massege);
 
-function bla() {
-const sum = 10;
-console.log(sum);
+// function bla() {
+// const sum = 10;
+// console.log(sum);
+// }
+
+// const sum = 100;
+// console.log(sum);
+
+// bla();
+
+function hero(bullets, dragons) {
+    if (bullets !== 0 && bullets % dragons === 0 && bullets / dragons >= 2) {
+        return true;
+    } else {
+        return false;
+    }
 }
 
-const sum = 100;
-console.log(sum);
-
-bla();
+// console.log(hero(10, 5));
+// console.log(hero(7, 4));
+// console.log(hero(4, 5));
+console.log(hero(100, 40));
+// console.log(hero(1500, 751));
