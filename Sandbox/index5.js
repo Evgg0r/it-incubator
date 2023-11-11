@@ -9,7 +9,7 @@ let marks = [{
     }
 ];
 // отобразим в консоли все заголовки с оценками
-for (let i = 0; i <= marks.length; i++) {
+for (let i = 0; i < marks.length; i++) {
     let mark = marks[i];
     console.log("title: " + mark.title, ", mark: " + mark.value);
 }
