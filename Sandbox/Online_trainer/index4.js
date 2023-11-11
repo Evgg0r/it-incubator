@@ -97,9 +97,9 @@ let dayTraining2 = [{
             repetitions: 12,
         }],
         imageTechOfExecution: [
-            './image/Pull-ups&Chin-ups/image1.svg',
-            './image/Pull-ups&Chin-ups/image2.svg',
-            './image/Pull-ups&Chin-ups/image3.svg',
+            './image/Dumbbell_lunges/image1.svg',
+            './image/Dumbbell_lunges/image2.svg',
+            './image/Dumbbell_lunges/image3.svg',
         ],
     }]
 }];
