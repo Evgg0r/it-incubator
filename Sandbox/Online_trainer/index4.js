@@ -28,19 +28,19 @@ let dayTraining1 = [{
         nameExercise: 'Pull-ups & Chin-ups',
         trainingApproach: [{
             number: 'First',
-            weight: null,
+            weight: 0,
             repetitions: 10,
         }, {
             number: 'Second',
-            weight: null,
+            weight: 0,
             repetitions: 15,
         }, {
             number: 'Third',
-            weight: null,
+            weight: 0,
             repetitions: 12,
         }, {
             number: 'Fourth',
-            weight: null,
+            weight: 0,
             repetitions: 12,
         }],
         imageTechOfExecution: [
@@ -103,3 +103,43 @@ let dayTraining2 = [{
         ],
     }]
 }];
+
+
+let dayTrainings = [dayTraining1, dayTraining2];
+
+for (let i = 0; i < dayTrainings.length; i++) {
+    document.write('<div class="card-block">');
+
+    document.write('<h2>', dayTrainings[i][0].dayOfWeek, '</h2>');
+    const currentDayOfTraining = dayTrainings[i][0]
+    const {exercises} = currentDayOfTraining 
+
+    for (let j = 0; j < exercises.length; j++) {
+
+        document.write('<div class="income">');
+        document.write('<h3>', exercises[j].nameExercise, '</h3>');
+        const {trainingApproach} = exercises[j]
+
+        for (let k = 0; k < trainingApproach.length; k++) {
+            const approachNumber = k + 1; // Вычисляем порядковый номер подхода
+            const {nameNumber, weight, repetitions} = trainingApproach[k] 
+
+            // const nameNumber = dayTrainings[i][0].exercises[j].trainingApproach[k].number // номер подхода
+            // const weight = dayTrainings[i][0].exercises[j].trainingApproach[k].weight // вес подхода
+            // const repetitions = dayTrainings[i][0].exercises[j].trainingApproach[k].repetitions
+
+            if (weight > 0) {
+                document.write('<p>', approachNumber, ". ", nameNumber, " approach with ", "<strong>", weight, " kg x ", repetitions, " repetitions", "</strong>", '</p>', '<br>');
+            } else {
+                document.write('<p>', approachNumber, ". ", nameNumber, " approach with ", "<strong>", repetitions, " repetitions", "</strong>", '</p>', '<br>');
+            }
+        }
+        const {imageTechOfExecution: imageTech} = exercises[j]
+        for (let l = 0; l < imageTech.length; l++) {
+            document.write('<img src="', imageTech[l], '">');
+        }
+        document.write('</div>');
+    }
+    document.write('<hr>')
+    document.write('</div>');
+}

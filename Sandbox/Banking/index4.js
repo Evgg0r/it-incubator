@@ -147,5 +147,5 @@ for (let i = 0; i < cards.length; i++) {
     document.write("</ul>");
     document.write('</div>');
 
-    document.write('<hr>');
+    ;
 }
