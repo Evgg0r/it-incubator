@@ -151,30 +151,32 @@ function renderCardTransaction(transaction) {
     document.write("<ul>");
 
     for (let j = 0; j < transactions.length; j++) {
-        let transaction = transactions[j];
-        console.log(transaction);
-        document.write("<li>",
-            transaction.title, ", ",
-            transaction.date, ",",
-            "</li>");
-
-        // условный рендеринг
-        if (transaction.amount > 0) {
-            document.write(
-                '<span class = "income">',
-                transaction.amount,
-                "</span>"
-            );
-        } else {
-            document.write(
-                '<span class = "outcome">',
-                transaction.amount,
-                "</span>"
-            );
-        }
+        renderTransaction(transactions[j]) 
     }
     document.write("</ul>");
     document.write("</div>");
 
     document.write("<hr>");
+}
+
+function renderTransaction(transaction) {
+    document.write("<li>",
+        transaction.title, ", ",
+        transaction.date, ",",
+        "</li>");
+
+    // условный рендеринг
+    if (transaction.amount > 0) {
+        document.write(
+            '<span class = "income">',
+            transaction.amount,
+            "</span>"
+        );
+    } else {
+        document.write(
+            '<span class = "outcome">',
+            transaction.amount,
+            "</span>"
+        );
+    }
 }
