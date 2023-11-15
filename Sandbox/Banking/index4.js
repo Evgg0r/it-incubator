@@ -91,11 +91,17 @@ function renderHeader(userName) {
 };
 
 function renderCards(cards) {
-    document.write('<h2>', 'Cards; ', '</h2>');
-
+    renderCardsHeader();
     for (let i = 0; i < cards.length; i++) {
-        renderCard(cards[i]);
-    }    
+        document.write("<div>");
+        renderCard(cards[i])
+        renderCardTransaction(cards[i].transactions);
+        document.write("</div>");
+    }
+}
+
+function renderCardsHeader() {
+    document.write('<h2>', 'Cards; ', '</h2>');
 }
 
 function renderCard(card) {
@@ -138,11 +144,14 @@ function renderCard(card) {
         '</span>'
     );
 
+}
+
+function renderCardTransaction(transaction) {
     document.write('<h2>', 'History Transaction', '</h2>');
     document.write("<ul>");
 
-    for (let j = 0; j < card.transactions.length; j++) {
-        let transaction = card.transactions[j];
+    for (let j = 0; j < transactions.length; j++) {
+        let transaction = transactions[j];
         console.log(transaction);
         document.write("<li>",
             transaction.title, ", ",
@@ -164,10 +173,8 @@ function renderCard(card) {
             );
         }
     }
-
     document.write("</ul>");
     document.write("</div>");
 
     document.write("<hr>");
-
 }
