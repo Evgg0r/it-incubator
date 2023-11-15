@@ -5,11 +5,8 @@ const cards = getCards();
 
 // render
 renderHeader(currentUser.name)
+renderCards(cards);
 
-for (let i = 0; i < cards.length; i++) {
-    const card = cards[i];
-    renderCard(card);
-}
 
 function getCurrentUser() {
     return {
@@ -91,8 +88,15 @@ function getCards() {
 
 function renderHeader(userName) {
     document.write('<h1>', 'Hello ', +userName, '</h1>');
-    document.write('<h2>', 'Cards; ', '</h2>');
 };
+
+function renderCards(cards) {
+    document.write('<h2>', 'Cards; ', '</h2>');
+
+    for (let i = 0; i < cards.length; i++) {
+        renderCard(cards[i]);
+    }    
+}
 
 function renderCard(card) {
     document.write('<div class="card-block">');
