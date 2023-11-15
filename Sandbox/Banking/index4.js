@@ -105,7 +105,6 @@ function renderCardsHeader() {
 }
 
 function renderCard(card) {
-    document.write('<div class="card-block">');
     document.write('<b>', card.type + ' card', '</b>', '<br>');
 
     let networkLogo = '';
@@ -154,7 +153,6 @@ function renderCardTransaction(transaction) {
         renderTransaction(transactions[j]) 
     }
     document.write("</ul>");
-    document.write("</div>");
 
     document.write("<hr>");
 }
