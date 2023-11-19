@@ -3,6 +3,8 @@
 const currentUser = getCurrentUser();
 const cards = getCards();
 
+const rootElement = document.querySelector('#root');
+
 // render
 renderHeader(currentUser.name)
 renderCards(cards);
@@ -87,16 +89,26 @@ function getCards() {
 }
 
 function renderHeader(userName) {
-    document.write('<h1>', 'Hello ', +userName, '</h1>');
+
+    const h1Element = document.createElement('h1')
+    h1Element.innerText = `Hello ', ${userName}, balance: ${userBalance}`
+    rootElement.appendChild(h1Element);
 };
 
 function renderCards(cards) {
     renderCardsHeader();
+
     for (let i = 0; i < cards.length; i++) {
-        document.write("<div>");
-        renderCard(cards[i])
-        renderCardTransaction(cards[i].transactions);
-        document.write("</div>");
+        const divElement = document.createElement('div');
+
+        const cardElement = createCardElement(cards[i]);
+
+        divElement.appendChild(cardElement);
+
+        const transactionsElement = createCardTransactionsElement(cards[i].transactions);
+        divElement.appendChild(transactionsElement);
+
+        rootElement.appendChild(divElement);
     }
 }
 
@@ -104,77 +116,93 @@ function renderCardsHeader() {
     document.write('<h2>', 'Cards; ', '</h2>');
 }
 
-function renderCard(card) {
-    document.write('<b>', card.type + ' card', '</b>', '<br>');
+function createCardElement(card) {
+    const cardElement = document.createElement('div');
+    cardElement.classList.add('card-block');
 
-    let networkLogo = '';
-    switch (card.networkType) {
-        case 'visa':
-            networkLogo = '<img src = "./image/visa_logo.svg">';
-            break;
-        case 'mastercard':
-            networkLogo = '<img src = "./image/mastercard_logo.svg">';
-            break;
-    }
+    const cardTypeElement = document.createElement('b');
+    cardTypeElement.innerText = card.type + ' card';
 
-    document.write('<b>', networkLogo, '</b>', '<br>');
-    document.write('<b>', 'current balance', '</b>', '<br>');
+    cardElement.appendChild(ardTypeElement);
 
-    let currencySign = '';
-    switch (card.currencyType) {
-        case 'USD':
-            currencySign = '$';
-            break;
-        case 'EUR':
-            currencySign = '€';
-            break;
-        case 'GBP':
-            currencySign = '£';
-            break;
+    const br1 = document.createElement('br');
 
-    }
+    cardElement.appendChild(br1);
 
-    document.write('<span>', currencySign + card.currentBallance, '</span>', '<br>');
-    document.write('<h4>', card.number, '<h4>');
-    document.write('<span>',
-        card.expirationMonth,
-        '/',
-        card1.expirationYear,
-        '</span>'
-    );
+    return cardElement
+
+    // let networkLogo = '';
+    // switch (card.networkType) {
+    //     case 'visa':
+    //         networkLogo = '<img src = "./image/visa_logo.svg">';
+    //         break;
+    //     case 'mastercard':
+    //         networkLogo = '<img src = "./image/mastercard_logo.svg">';
+    //         break;
+    // }
+
+    // document.write('<b>', networkLogo, '</b>', '<br>');
+    // document.write('<b>', 'current balance', '</b>', '<br>');
+
+    // let currencySign = '';
+    // switch (card.currencyType) {
+    //     case 'USD':
+    //         currencySign = '$';
+    //         break;
+    //     case 'EUR':
+    //         currencySign = '€';
+    //         break;
+    //     case 'GBP':
+    //         currencySign = '£';
+    //         break;
+
+    // }
+
+    // document.write('<span>', currencySign + card.currentBallance, '</span>', '<br>');
+    // document.write('<h4>', card.number, '<h4>');
+    // document.write('<span>',
+    //     card.expirationMonth,
+    //     '/',
+    //     card1.expirationYear,
+    //     '</span>'
+    // );
 
 }
 
-function renderCardTransaction(transaction) {
-    document.write('<h2>', 'History Transaction', '</h2>');
-    document.write("<ul>");
+function createCardTransactionsElement(transaction) {
+    const ulElement = document.createElement('ul');
+
+    // document.write('<h2>', 'History Transaction', '</h2>');
+    // document.write("<ul>");
 
     for (let j = 0; j < transactions.length; j++) {
-        renderTransaction(transactions[j]) 
+        const transactionElement = createTransactionElement(transactions[j])
+        ulElement.appendChild(transactionElement);
     }
-    document.write("</ul>");
+    // document.write("</ul>");
+    // document.write("</div>");
 
-    document.write("<hr>");
+    // document.write("<hr>");
 }
 
-function renderTransaction(transaction) {
-    document.write("<li>",
+function createTransactionElement(transaction) {
+    const transactionElement = document.createElement('li');
+    transactionElement.innerText =
         transaction.title, ", ",
-        transaction.date, ",",
-        "</li>");
-
+        transaction.date;
+    return transactionElement;
     // условный рендеринг
-    if (transaction.amount > 0) {
-        document.write(
-            '<span class = "income">',
-            transaction.amount,
-            "</span>"
-        );
-    } else {
-        document.write(
-            '<span class = "outcome">',
-            transaction.amount,
-            "</span>"
-        );
-    }
+    // if (transaction.amount > 0) {
+    //     document.write(
+    //         '<span class = "income">',
+    //         transaction.amount,
+    //         "</span>"
+    //     );
+    // } else {
+    //     document.write(
+    //         '<span class = "outcome">',
+    //         transaction.amount,
+    //         "</span>"
+    //     );
+    // }
 }
