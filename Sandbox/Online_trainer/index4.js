@@ -124,10 +124,6 @@ for (let i = 0; i < dayTrainings.length; i++) {
             const approachNumber = k + 1; // Вычисляем порядковый номер подхода
             const {nameNumber, weight, repetitions} = trainingApproach[k] 
 
-            // const nameNumber = dayTrainings[i][0].exercises[j].trainingApproach[k].number // номер подхода
-            // const weight = dayTrainings[i][0].exercises[j].trainingApproach[k].weight // вес подхода
-            // const repetitions = dayTrainings[i][0].exercises[j].trainingApproach[k].repetitions
-
             if (weight > 0) {
                 document.write('<p>', approachNumber, ". ", nameNumber, " approach with ", "<strong>", weight, " kg x ", repetitions, " repetitions", "</strong>", '</p>', '<br>');
             } else {
