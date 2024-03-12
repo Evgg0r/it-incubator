@@ -268,28 +268,28 @@
 
 // //---------------------------
 
-ROT13 is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet.ROT13 is an example of the Caesar cipher.
+// ROT13 is a simple letter substitution cipher that replaces a letter with the letter 13 letters after it in the alphabet.ROT13 is an example of the Caesar cipher.
 
-Create a
-function that takes a string and returns the string ciphered with Rot13.If there are numbers or special characters included in the string, they should be returned as they are.Only letters from the latin / english alphabet should be shifted, like in the original Rot13 "implementation".
+// Create a
+// function that takes a string and returns the string ciphered with Rot13.If there are numbers or special characters included in the string, they should be returned as they are.Only letters from the latin / english alphabet should be shifted, like in the original Rot13 "implementation".
 
-function rot13(message) {
-    var result = "";
-    for (var i = 0; i < message.length; i++) {
-        var char = message[i];
-        if (char.match(/[a-z]/i)) {
-            var code = message.charCodeAt(i);
-            if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
-                // Shift the character code by 13 positions
-                if ((code >= 65 && code <= 77) || (code >= 97 && code <= 109)) {
-                    code += 13;
-                } else {
-                    code -= 13;
-                }
-                char = String.fromCharCode(code);
-            }
-        }
-        result += char;
-    }
-    return result;
-}
+// function rot13(message) {
+//     var result = "";
+//     for (var i = 0; i < message.length; i++) {
+//         var char = message[i];
+//         if (char.match(/[a-z]/i)) {
+//             var code = message.charCodeAt(i);
+//             if ((code >= 65 && code <= 90) || (code >= 97 && code <= 122)) {
+//                 // Shift the character code by 13 positions
+//                 if ((code >= 65 && code <= 77) || (code >= 97 && code <= 109)) {
+//                     code += 13;
+//                 } else {
+//                     code -= 13;
+//                 }
+//                 char = String.fromCharCode(code);
+//             }
+//         }
+//         result += char;
+//     }
+//     return result;
+// }
