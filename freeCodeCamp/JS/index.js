@@ -187,3 +187,5 @@ function sum(arr, n) {
     return sum(arr, n - 1) + arr[n - 1];
     // Only change code above this line
 }
+
+let currentWeapon = 0;
