@@ -1027,3 +1027,46 @@
 
 //     return result;
 // }
+
+// //---------------------------
+
+// How can you tell an extrovert from an introvert at NSA ?
+//     Va gur ryringbef, gur rkgebireg ybbxf ng gur BGURE thl 'f fubrf.
+
+// I found this joke on USENET, but the punchline is scrambled.Maybe you can decipher it ?
+//     According to Wikipedia, ROT13 is frequently used to obfuscate jokes on USENET.
+
+// For this task you 're only supposed to substitute characters. Not spaces, punctuation, numbers, etc.
+
+// Test examples:
+
+//     "EBG13 rknzcyr." - > "ROT13 example."
+
+// "This is my first ROT13 excercise!" - > "Guvf vf zl svefg EBG13 rkprepvfr!"
+
+
+// function rot13(str) {
+//     var deciphered = '';
+
+//     for (var i = 0; i < str.length; i++) {
+//         var char = str[i];
+
+//         if (char.match(/[A-Za-z]/)) {
+//             var code = str.charCodeAt(i);
+
+//             if (code >= 65 && code <= 90) {
+//                 // Uppercase letters
+//                 char = String.fromCharCode(((code - 65 + 13) % 26) + 65);
+//             } else if (code >= 97 && code <= 122) {
+//                 // Lowercase letters
+//                 char = String.fromCharCode(((code - 97 + 13) % 26) + 97);
+//             }
+//         }
+
+//         deciphered += char;
+//     }
+
+//     return deciphered;
+// }
+
+// //---------------------------
