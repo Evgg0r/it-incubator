@@ -967,3 +967,63 @@
 // }
 
 // //---------------------------
+
+// Snail Sort
+
+// Given an n x n array,
+// return the array elements arranged from outermost elements to the middle element, traveling clockwise.
+
+// array = [
+//     [1, 2, 3],
+//     [4, 5, 6],
+//     [7, 8, 9]
+// ]
+// snail(array)# => [1, 2, 3, 6, 9, 8, 7, 4, 5]
+// For better understanding, please follow the numbers of the next array consecutively:
+
+//     array = [
+//         [1, 2, 3],
+//         [8, 9, 4],
+//         [7, 6, 5]
+//     ]
+// snail(array)# => [1, 2, 3, 4, 5, 6, 7, 8, 9]
+// This image will illustrate things more clearly:
+
+
+//     NOTE: The idea is not sort the elements from the lowest value to the highest;
+// the idea is to traverse the 2 - d array in a clockwise snailshell pattern.
+
+// NOTE 2: The 0x0(empty matrix) is represented as en empty array inside an array[[]].
+
+
+// function snail(array) {
+//     const result = [];
+
+//     while (array.length) {
+//         // Get the first row and remove it from the array
+//         result.push(...array.shift());
+
+//         // Get the last element from each remaining row
+//         for (let i = 0; i < array.length; i++) {
+//             const row = array[i];
+//             if (row.length) {
+//                 result.push(row.pop());
+//             }
+//         }
+
+//         // Get the last row in reverse order and remove it from the array
+//         if (array.length) {
+//             result.push(...array.pop().reverse());
+//         }
+
+//         // Get the first element from each remaining row in reverse order
+//         for (let i = array.length - 1; i >= 0; i--) {
+//             const row = array[i];
+//             if (row.length) {
+//                 result.push(row.shift());
+//             }
+//         }
+//     }
+
+//     return result;
+// }
