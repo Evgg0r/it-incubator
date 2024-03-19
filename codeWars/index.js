@@ -1070,3 +1070,43 @@
 // }
 
 // //---------------------------
+
+// Given the string representations of two integers,
+//     return the string representation of the sum of those integers.
+
+// For example:
+
+//     sumStrings('1', '2') // => '3'
+// A string representation of an integer will contain no characters besides the ten numerals "0"
+// to "9".
+
+// I have removed the use of BigInteger and BigDecimal in java
+
+// Python: your solution need to work with huge numbers(about a milion digits), converting to int will not work.
+
+// function sumStrings(a, b) {
+//     let result = ''; // Store the resulting sum
+//     let carry = 0; // Track the carry-over
+
+//     let i = a.length - 1; // Index for string 'a'
+//     let j = b.length - 1; // Index for string 'b'
+
+//     // Iterate through the strings from right to left
+//     while (i >= 0 || j >= 0 || carry > 0) {
+//         const digitA = i >= 0 ? parseInt(a[i]) : 0; // Get the digit from 'a' or use 0
+//         const digitB = j >= 0 ? parseInt(b[j]) : 0; // Get the digit from 'b' or use 0
+
+//         const sum = digitA + digitB + carry; // Calculate the sum
+//         const digitSum = sum % 10; // Extract the digit sum
+//         carry = Math.floor(sum / 10); // Calculate the carry-over
+
+//         result = digitSum + result; // Prepend the digit sum to the result
+
+//         i--; // Move to the next digit in 'a'
+//         j--; // Move to the next digit in 'b'
+//     }
+
+//     return result;
+// }
+
+// //---------------------------
