@@ -1240,3 +1240,106 @@
 
 // //---------------------------
 
+// Given a Sudoku data structure with size NxN, N > 0 and√ N == integer, write a method to validate
+// if it has been filled out correctly.
+
+// The data structure is a multi - dimensional Array, i.e:
+
+//     [
+//         [7, 8, 4, 1, 5, 9, 3, 2, 6],
+//         [5, 3, 9, 6, 7, 2, 8, 4, 1],
+//         [6, 1, 2, 4, 3, 8, 7, 5, 9],
+
+//         [9, 2, 8, 7, 1, 5, 4, 6, 3],
+//         [3, 5, 7, 8, 4, 6, 1, 9, 2],
+//         [4, 6, 1, 9, 2, 3, 5, 8, 7],
+
+//         [8, 7, 6, 3, 9, 4, 2, 1, 5],
+//         [2, 4, 3, 5, 6, 1, 9, 7, 8],
+//         [1, 9, 5, 2, 8, 7, 6, 3, 4]
+//     ]
+// Rules
+// for validation
+
+// Data structure dimension: NxN where N > 0 and√ N == integer
+// Rows may only contain integers: 1..N(N included)
+// Columns may only contain integers: 1..N(N included)
+// 'Little squares'(3 x3 in example above) may also only contain integers: 1..N(N included)
+
+// var Sudoku = function (data) {
+//     // Private methods
+//     // -------------------------
+
+//     function hasDuplicates(array) {
+//         // Helper function to check if an array contains duplicates
+//         var values = {};
+//         for (var i = 0; i < array.length; i++) {
+//             var value = array[i];
+//             if (value !== 0) {
+//                 if (values[value]) {
+//                     return true;
+//                 }
+//                 values[value] = true;
+//             }
+//         }
+//         return false;
+//     }
+
+//     function getColumn(data, columnIndex) {
+//         // Helper function to extract a column from the Sudoku data structure
+//         var column = [];
+//         for (var i = 0; i < data.length; i++) {
+//             column.push(data[i][columnIndex]);
+//         }
+//         return column;
+//     }
+
+//     function getSquare(data, startX, startY) {
+//         // Helper function to extract a square (3x3) from the Sudoku data structure
+//         var square = [];
+//         for (var i = startX; i < startX + 3; i++) {
+//             for (var j = startY; j < startY + 3; j++) {
+//                 square.push(data[i][j]);
+//             }
+//         }
+//         return square;
+//     }
+
+//     // Public methods
+//     // -------------------------
+
+//     return {
+//         isValid: function () {
+//             // Check rows
+//             for (var i = 0; i < data.length; i++) {
+//                 if (hasDuplicates(data[i])) {
+//                     return false;
+//                 }
+//             }
+
+//             // Check columns
+//             for (var j = 0; j < data.length; j++) {
+//                 var column = getColumn(data, j);
+//                 if (hasDuplicates(column)) {
+//                     return false;
+//                 }
+//             }
+
+//             // Check squares
+//             var squareSize = Math.sqrt(data.length);
+//             for (var startX = 0; startX < data.length; startX += squareSize) {
+//                 for (var startY = 0; startY < data.length; startY += squareSize) {
+//                     var square = getSquare(data, startX, startY);
+//                     if (hasDuplicates(square)) {
+//                         return true;
+//                     }
+//                 }
+//             }
+
+//             // All checks passed, the Sudoku is valid
+//             return true;
+//         }
+//     };
+// };
+
+// //---------------------------
