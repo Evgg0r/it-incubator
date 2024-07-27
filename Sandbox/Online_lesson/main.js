@@ -16,7 +16,25 @@ while (isWinner === false) {
     userChoice = prompt('Выбери камень, ножницы или бумага:')
     userChoice = userChoice.toLowerCase()
 
-    if (userChoice === 'камень' || userChoice === 'ножницы' || userChoice === 'бумага'){
+    if (userChoice === 'камень' || userChoice === 'ножницы' || userChoice === 'бумага') {
+
+        if (computerChoice === userChoice) {
+            alert('Ничия, давай еще разок!')
+        } else if ((userChoice === 'камень' && computerChoice === 'ножницы') ||
+                   (userChoice === 'ножницы' && computerChoice === 'бумага') ||
+                   (userChoice === 'бумага' && computerChoice === 'камень')){ // user выйграл
+                    alert('Ты выиграл!');
+            isWinner = true;
+        } else(
+            alert('Ты проиграл!'); isWinner = true;
+        )
+
+
+
+
+
+
+
         // код...
     } else {
         alert('Введите правильное значение: камень, ножници или бумага')
