@@ -4,12 +4,22 @@ let isWinner = false // Флаг для определения наличия п
 
 const randomNumber = Math.floor(Math.random() * 3)
 
-if (randomNum === 0) {
-    computerChoice = 'камень'
-} else if (randomNum === 1) {
-    computerChoice = 'ножницы'
-} else {
-    computerChoice = 'бумага'
+// if (randomNumber === 0) {
+//     computerChoice = 'камень'
+// } else if (randomNumber === 1) {
+//     computerChoice = 'ножницы'
+// } else {
+//     computerChoice = 'бумага'
+// }
+
+switch (randomNumber) {
+    case 0:
+        computerChoice = 'камень'
+        break;
+    case 1:
+        computerChoice = 'ножницы'
+    default:
+        computerChoice = 'бумага'
 }
 
 while (isWinner === false) {
@@ -19,23 +29,17 @@ while (isWinner === false) {
     if (userChoice === 'камень' || userChoice === 'ножницы' || userChoice === 'бумага') {
 
         if (computerChoice === userChoice) {
-            alert('Ничия, давай еще разок!')
-        } else if ((userChoice === 'камень' && computerChoice === 'ножницы') ||
-                   (userChoice === 'ножницы' && computerChoice === 'бумага') ||
-                   (userChoice === 'бумага' && computerChoice === 'камень')){ // user выйграл
-                    alert('Ты выиграл!');
-            isWinner = true;
-        } else(
-            alert('Ты проиграл!'); isWinner = true;
-        )
+            alert('Ничья, давай еще разок!')
+        } else {
+            const isUserWiner =
+                (userChoice === 'камень' && computerChoice === 'ножницы') ||
+                (userChoice === 'ножницы' && computerChoice === 'бумага') ||
+                (userChoice === 'бумага' && computerChoice === 'камень')
+            const message = isUserWiner ? 'Ты выиграл!' : ' Ты проиграл!'
 
-
-
-
-
-
-
-        // код...
+            alert(message)
+            isWinner = true
+        } // код...
     } else {
         alert('Введите правильное значение: камень, ножници или бумага')
     }
