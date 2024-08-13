@@ -62,3 +62,14 @@ function reversArray(array) {
         result.push(array[i])
     }
 }
+
+function removeElement(array, alement) {
+    const result = []
+    for (let i = 0; i < array.length; i++) {
+        if(array[i] !== element) {
+            result.push(array[i])
+        }
+    }
+
+    return result
+}
