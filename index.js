@@ -1,34 +1,46 @@
-let gold = 100
+const array = ["Пиво", "Мороженко", "Кифирчик"]
 
-// const buildingName = "Tower"
-// const costGold = 30
+const scores = [23, 45, 56, 78, 91, 54]
 
-//     buildingName = "Blacksmith"
-//     costGold = 120
+array[3] = "Хлеб"
 
+array.push("Молоко") // 5
 
-function createBuilding(buildingName, costGold) {
-    if (gold >= costGold) {
-        gold = gold - costGold
-        console.log(`${buildingName}: work complete.`);
+alert(array.includes("молоко"))
+alert(array.indexOf("Молоко"))
+
+alert(array.splice(2, 1, "Кофе"))
+
+function calculateAverage(arrayOfScores) {
+    let sum = 0
+    //...
+    for(let i = 0: i < arrayOfScores.length; i++) {
+        sum = sum + arrayOfScores[i]
+    }
+    const result = sum/arrayOfScores.length
+    return result
+}
+
+alert(calculateAverage(scores))
+
+function classifyScores (arrayOfScores) {
+    const classifiedScores = []
+    for (let i = 0; i < arrayOfScores.length; i++) {
+        let grade;
+        if(arrayOfScores[i] >= 90)
+            grate = "A"
+        } else if (arrayOfScores[i] >= 80 && arrayOfScores[i] < 90){
+            grate = "B"
+        } else if (arrayOfScores[i] >= 70 && arrayOfScores[i] < 80){
+            grate = "C"
+        } else if (arrayOfScores[i] >= 50 && arrayOfScores[i] < 70){
+            grate = "D"
         } else {
-        console.log(`${buildingName}: not enough resources.`)
+            grate = "F"
         }
+        classifiedScores.push(grade)
+
+    return classifiedScores
 }
 
-createBuilding("Tower", 30)
-
-const name1 = "bob"
-
-function greet(userName) {
-    console.log(`${userName}, hi!`);
-}
-
-greet(name1)
-
-function increaseResource(carrentValue, increment) {
-    const totalValue = currentValue + increment
-    return totalValue
-}
-
-gold = increaseResource(gold, 300) //
+alert(classifyScores(scores))
