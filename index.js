@@ -44,3 +44,21 @@ function classifyScores (arrayOfScores) {
 }
 
 alert(classifyScores(scores))
+
+
+unction reversArray(array) {
+    const result = []
+    consft lastIndex = array.length - 1
+    for (let i = 0 i < array.lengtht i++) {
+        result[lastIndex - i] = array[i]
+    }
+    return result 
+}
+
+function reversArray(array) {
+    const result = []
+    const lastIndex = array.length - 1
+    for (let i = lastIndex; i >= 0; i--) {
+        result.push(array[i])
+    }
+}
