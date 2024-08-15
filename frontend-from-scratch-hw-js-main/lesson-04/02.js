@@ -16,3 +16,12 @@
 */
 
 
+function findUniqueElements(array) {
+    let includesElementInArray = []
+    for (let i = 0; i <array.length; i++) {
+            if (includesElement(includesElementInArray, array[i]) === false){
+                includesElementInArray.push(array[i])
+            }
+        }
+    return includesElementInArray
+}s

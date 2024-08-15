@@ -1,74 +1,109 @@
-const array = ["Пиво", "Мороженко", "Кифирчик"]
+// const array = ["Пиво", "Мороженко", "Кифирчик"]
 
-const scores = [23, 45, 56, 78, 91, 54]
+// const scores = [23, 45, 56, 78, 91, 54]
 
-array[3] = "Хлеб"
+// array[3] = "Хлеб"
 
-array.push("Молоко") // 5
+// array.push("Молоко") // 5
 
-alert(array.includes("молоко"))
-alert(array.indexOf("Молоко"))
+// alert(array.includes("молоко"))
+// alert(array.indexOf("Молоко"))
 
-alert(array.splice(2, 1, "Кофе"))
+// alert(array.splice(2, 1, "Кофе"))
 
-function calculateAverage(arrayOfScores) {
-    let sum = 0
-    //...
-    for(let i = 0: i < arrayOfScores.length; i++) {
-        sum = sum + arrayOfScores[i]
-    }
-    const result = sum/arrayOfScores.length
-    return result
-}
+// function calculateAverage(arrayOfScores) {
+//     let sum = 0
+//     //...
+//     for(let i = 0: i < arrayOfScores.length; i++) {
+//         sum = sum + arrayOfScores[i]
+//     }
+//     const result = sum/arrayOfScores.length
+//     return result
+// }
 
-alert(calculateAverage(scores))
+// alert(calculateAverage(scores))
 
-function classifyScores (arrayOfScores) {
-    const classifiedScores = []
-    for (let i = 0; i < arrayOfScores.length; i++) {
-        let grade;
-        if(arrayOfScores[i] >= 90)
-            grate = "A"
-        } else if (arrayOfScores[i] >= 80 && arrayOfScores[i] < 90){
-            grate = "B"
-        } else if (arrayOfScores[i] >= 70 && arrayOfScores[i] < 80){
-            grate = "C"
-        } else if (arrayOfScores[i] >= 50 && arrayOfScores[i] < 70){
-            grate = "D"
-        } else {
-            grate = "F"
-        }
-        classifiedScores.push(grade)
+// function classifyScores (arrayOfScores) {
+//     const classifiedScores = []
+//     for (let i = 0; i < arrayOfScores.length; i++) {
+//         let grade;
+//         if(arrayOfScores[i] >= 90)
+//             grate = "A"
+//         } else if (arrayOfScores[i] >= 80 && arrayOfScores[i] < 90){
+//             grate = "B"
+//         } else if (arrayOfScores[i] >= 70 && arrayOfScores[i] < 80){
+//             grate = "C"
+//         } else if (arrayOfScores[i] >= 50 && arrayOfScores[i] < 70){
+//             grate = "D"
+//         } else {
+//             grate = "F"
+//         }
+//         classifiedScores.push(grade)
 
-    return classifiedScores
-}
+//     return classifiedScores
+// }
 
-alert(classifyScores(scores))
+// alert(classifyScores(scores))
 
 
-function reversArray(array) {
-    const result = []
-    consft lastIndex = array.length - 1
-    for (let i = 0 i < array.lengtht i++) {
-        result[lastIndex - i] = array[i]
-    }
-    return result 
-}
+// function reversArray(array) {
+//     const result = []
+//     consft lastIndex = array.length - 1
+//     for (let i = 0 i < array.lengtht i++) {
+//         result[lastIndex - i] = array[i]
+//     }
+//     return result 
+// }
 
-function reversArray(array) {
-    const result = []
-    const lastIndex = array.length - 1
-    for (let i = lastIndex; i >= 0; i--) {
-        result.push(array[i])
-    }
-}
+// function reversArray(array) {
+//     const result = []
+//     const lastIndex = array.length - 1
+//     for (let i = lastIndex; i >= 0; i--) {
+//         result.push(array[i])
+//     }
+// }
 
-function removeElement(array, alement) {
-    const result = []
+// function removeElement(array, alement) {
+//     const result = []
+//     for (let i = 0; i < array.length; i++) {
+//         if(array[i] !== element) {
+//             result.push(array[i])
+//         }
+//         return result
+//     }
+// }
+
+
+function includesElement(array, element) {
     for (let i = 0; i < array.length; i++) {
-        if(array[i] !== element) {
-            result.push(array[i])
+        if(array[i] === element) {
+            return true
         }
-        return result
     }
+     return false
 }
+
+includesElement([1, 2, 3], 2)
+
+
+function findUniqueElements(array) {
+    let includesElementInArray = []
+    for (let i = 0; i <array.length; i++) {
+            if (includesElement(includesElementInArray, array[i]) === false){
+                includesElementInArray.push(array[i])
+            }
+        }
+    return includesElementInArray
+}
+
+findUniqueElements([1, 2, 3, 2, 1, 4])
+
+
+function findCommonElements(array1, array2) {
+    let commonElements =[]
+    for (let i = 0; i < array1.length; i ++ ) {
+        if (includesElement(array2, array1[i] === true ))
+            commonElements.push(array[i])
+        }
+    
+    return commonElements
