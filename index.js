@@ -1,109 +1,38 @@
-// const array = ["Пиво", "Мороженко", "Кифирчик"]
+document.addEventListener('DOMContentLoaded', function () {
+    const title = document.getElementById('course-title')
+    title.classList.remove('title')
 
-// const scores = [23, 45, 56, 78, 91, 54]
+    const colorButton = document.querySelector('#color-button')
+    colorButton.setAttribute('title', 'Обновленное содержание курса 📘 ')
+    colorButton.style.backgroundColor = 'blueviolet'
+    colorButton.style.color = 'white'
+    colorButton.style.border = 'none'
+    colorButton.style.padding = '5px 10px'
+    colorButton.style.borderRadius = '5px'
 
-// array[3] = "Хлеб"
+    function getRandomColors() {
+        let red = Math.floor(Math.random() * 256)
+        let green = Math.floor(Math.random() * 256)
+        let blue = Math.floor(Math.random() * 256)
 
-// array.push("Молоко") // 5
+        return `rgb(${red}, ${green}, ${blue})`
+    }
 
-// alert(array.includes("молоко"))
-// alert(array.indexOf("Молоко"))
+    function setRandomColor() {
+        let items = document.querySelectorAll('.item')
+        console.log(items);
 
-// alert(array.splice(2, 1, "Кофе"))
-
-// function calculateAverage(arrayOfScores) {
-//     let sum = 0
-//     //...
-//     for(let i = 0: i < arrayOfScores.length; i++) {
-//         sum = sum + arrayOfScores[i]
-//     }
-//     const result = sum/arrayOfScores.length
-//     return result
-// }
-
-// alert(calculateAverage(scores))
-
-// function classifyScores (arrayOfScores) {
-//     const classifiedScores = []
-//     for (let i = 0; i < arrayOfScores.length; i++) {
-//         let grade;
-//         if(arrayOfScores[i] >= 90)
-//             grate = "A"
-//         } else if (arrayOfScores[i] >= 80 && arrayOfScores[i] < 90){
-//             grate = "B"
-//         } else if (arrayOfScores[i] >= 70 && arrayOfScores[i] < 80){
-//             grate = "C"
-//         } else if (arrayOfScores[i] >= 50 && arrayOfScores[i] < 70){
-//             grate = "D"
-//         } else {
-//             grate = "F"
-//         }
-//         classifiedScores.push(grade)
-
-//     return classifiedScores
-// }
-
-// alert(classifyScores(scores))
-
-
-// function reversArray(array) {
-//     const result = []
-//     consft lastIndex = array.length - 1
-//     for (let i = 0 i < array.lengtht i++) {
-//         result[lastIndex - i] = array[i]
-//     }
-//     return result 
-// }
-
-// function reversArray(array) {
-//     const result = []
-//     const lastIndex = array.length - 1
-//     for (let i = lastIndex; i >= 0; i--) {
-//         result.push(array[i])
-//     }
-// }
-
-// function removeElement(array, alement) {
-//     const result = []
-//     for (let i = 0; i < array.length; i++) {
-//         if(array[i] !== element) {
-//             result.push(array[i])
-//         }
-//         return result
-//     }
-// }
-
-
-function includesElement(array, element) {
-    for (let i = 0; i < array.length; i++) {
-        if(array[i] === element) {
-            return true
+        for (const item of items) {
+            item.style.color = getRandomColors();
         }
     }
-     return false
-}
 
-includesElement([1, 2, 3], 2)
+    colorButton.addEventListener('click', setRandomColor)
 
-
-function findUniqueElements(array) {
-    let includesElementInArray = []
-    for (let i = 0; i <array.length; i++) {
-            if (includesElement(includesElementInArray, array[i]) === false){
-                includesElementInArray.push(array[i])
-            }
-        }
-    return includesElementInArray
-}
-
-findUniqueElements([1, 2, 3, 2, 1, 4])
+    const list = document.querySelector(".list")
+    list.classList.add('current') //remove удаляет класс
 
 
-function findCommonElements(array1, array2) {
-    let commonElements =[]
-    for (let i = 0; i < array1.length; i ++ ) {
-        if (includesElement(array2, array1[i] === true ))
-            commonElements.push(array[i])
-        }
-    
-    return commonElements
+    const domItem = list.querySelector('#dom')
+    domItem.innerHTML = '<a href="https://developer.mozilla.org/ru/docs/Web/API/Document_Object_Model/Introduction">Взаимодействие с DOM</a>'
+})
